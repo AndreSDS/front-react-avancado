@@ -47,7 +47,8 @@ const Index = ({
   </>
 )
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
+  console.log(slug)
   const { landingPage } = await client.request(GET_LANDING_PAGE)
   return {
     props: {
